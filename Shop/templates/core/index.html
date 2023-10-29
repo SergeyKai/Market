@@ -1,0 +1,169 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+{% endblock styles%}
+
+
+{% block main %}
+
+<main>
+
+    <div class="product_slider">
+
+        <div class="product_item">
+
+            <div class="product_image_wrapper">
+                <img class="product_image" src="{% static 'img/products/furniture1.jpg' %}" alt="#">
+            </div>
+
+            <div class="product_information_wrapper">
+
+                <a class="product_link" href="#">
+                    <h2 class="product_title">
+                        Lorem ipsum dolor sit amet.
+                    </h2>
+                </a>
+                <p class="product_short_description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea numquam
+                    odit officiis perferendis reprehenderit similique.
+                </p>
+
+                <div class="price_wrapper">
+
+                    <p class="product_price">10000 <span class="currency">Р</span></p>
+                    <button class="btn_add_to_cart">Add +</button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="categories">
+
+        <div class="categories_wrapper">
+
+            <div class="category_item category_item_normal orange_gradient">
+                <a href="#" class="category_link"></a>
+                <div class="category_description">
+                    <div class="category_description_wrapper">
+                        <h3 class="category_title">
+                            Lorem ipsum.
+                        </h3>
+                        <p class="category_description_text">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="category_item_image"
+                     style="background-image: url({% static 'img/products/chair.jpg' %}); background-position: center center; background-size: cover;"></div>
+            </div>
+            <div class="category_item category_item_large">
+                <a href="#" class="category_link"></a>
+                <div class="category_description">
+                    <div class="category_description_wrapper">
+                        <h3 class="category_title">
+                            Lorem ipsum.
+                        </h3>
+                        <p class="category_description_text">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="category_item_image"
+                     style="background-image: url({% static 'img/products/couch1.jpeg' %}); background-position: center center; background-size: cover;"></div>
+
+            </div>
+            <div class="category_item category_item_normal">
+                <a href="#" class="category_link"></a>
+                <div class="category_description">
+                    <div class="category_description_wrapper">
+                        <h3 class="category_title">
+                            Lorem ipsum.
+                        </h3>
+                        <p class="category_description_text">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="category_item_image"
+                     style="background-image: url({% static 'img/products/furniture2.jpg' %}); background-position: center center; background-size: cover;"></div>
+            </div>
+            <div class="category_item category_item_normal">
+                <a href="#" class="category_link"></a>
+                <div class="category_description">
+                    <div class="category_description_wrapper">
+                        <h3 class="category_title">
+                            Lorem ipsum.
+                        </h3>
+                        <p class="category_description_text">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="category_item_image"
+                     style="background-image: url({% static 'img/products/table1.jpg' %}); background-position: center center; background-size: cover;"></div>
+            </div>
+            <div class="category_item category_item_normal">
+                <a href="#" class="category_link"></a>
+                <div class="category_description">
+                    <div class="category_description_wrapper">
+                        <h3 class="category_title">
+                            Lorem ipsum.
+                        </h3>
+                        <p class="category_description_text">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="category_item_image"
+                     style="background-image: url({% static 'img/products/bed1.jpg' %}); background-position: center center; background-size: cover;"></div>
+            </div>
+            <div class="category_item category_item_normal">
+                <a href="#" class="category_link"></a>
+                <div class="category_description">
+                    <div class="category_description_wrapper">
+                        <h3 class="category_title">
+                            Lorem ipsum.
+                        </h3>
+                        <p class="category_description_text">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="category_item_image"
+                     style="background-image: url({% static 'img/products/armchair1.jpg' %}); background-position: center center; background-size: cover;"></div>
+            </div>
+            <div class="category_item category_item_normal">
+                <a href="#" class="category_link"></a>
+                <div class="category_description">
+                    <div class="category_description_wrapper">
+                        <h3 class="category_title">
+                            Lorem ipsum.
+                        </h3>
+                        <p class="category_description_text">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+                </div>
+                <div class="category_item_image"
+                     style="background-image: url({% static 'img/products/dresser.jpg' %}); background-position: center center; background-size: cover;"></div>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+{% endblock main %}
