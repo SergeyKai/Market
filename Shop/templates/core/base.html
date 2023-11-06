@@ -39,7 +39,7 @@
                         class="nav_bot"></span></li>
                 <li class="nav_link_item"><a href="{% url 'products_list' %}" class="nav_link">Каталог</a><span
                         class="nav_bot"></span></li>
-                <li class="nav_link_item"><a href="#" class="nav_link">О нас</a><span class="nav_bot"></span></li>
+                <li class="nav_link_item"><a href="{% url 'about' %}" class="nav_link">О нас</a><span class="nav_bot"></span></li>
                 <li class="nav_link_item user_check">
                     {% if user.is_authenticated %}
                     <a href="{% url 'profile' %}" class="nav_link ">

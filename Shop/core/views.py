@@ -18,3 +18,7 @@ def index(request):
             }
         )
     return render(request, 'core/index.html', {'categories': categories, 'products': products_list})
+
+
+def about(request):
+    return render(request, 'core/about.html')
