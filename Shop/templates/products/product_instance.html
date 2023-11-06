@@ -1,0 +1,93 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/product_instance.css' %}">
+{% endblock styles%}
+
+
+{% block main %}
+
+<main>
+
+    <div class="product_instance">
+        <div class="product_images">
+            <div class="product_img_slider">
+                {% for image in product.images %}
+                <div class="slider_product_img_wrapper">
+                    <img class="product_img__slider_inner" src="{{ image.image.url }}" alt="">
+                </div>
+                {% endfor %}
+            </div>
+            <div class="current_img_product_wrapper">
+                <img class="current_img_product" src="{{ product.images.first.image.url }}" alt="">
+            </div>
+
+        </div>
+        <div class="product_nav">
+            <h2 class="instance_product_title">
+                {{ product.product.title }}
+            </h2>
+            <div class="product_variant_list">
+
+                <div class="product_variant_instance">
+                    {% for product_variant in product.product_variants %}
+                    <a href="{% url 'product_instance_variant' product.product.pk product_variant.pk %}" class="product_variant_instance_link">{{ forloop.counter }}</a>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <div class="product_instance_price_wrapper">
+                {{ product.current_variant.get_current_price }}
+                <a href="{% url 'add_to_cart' product.current_variant.pk %}" class="add_to_cart_btn">Добавить в
+                    корзину</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="separate_line"></div>
+    <div class="all_product_information">
+        <nav class="product_information_nav">
+            <ul class="product_nav_list">
+                <li class="product_nav_item">
+                    <a href="#description" class="product_information_nav_link">Описание</a>
+                </li>
+                <li class="product_nav_item">
+                    <a href="#characteristics" class="product_information_nav_link">Характеристики</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="product_description_wrapper" id="description">
+
+            <h3 class="product_description_title">
+                Описание
+            </h3>
+
+            <p class="product_description">
+                {{ product.product.description }}
+            </p>
+
+        </div>
+        <div class="product_characteristics_wrapper" id="characteristics">
+
+            <h3 class="product_characteristics_title">
+                Характеристики
+            </h3>
+            <ul class="product_characteristics">
+                {% for key, value in product.current_variant.attributes.items %}
+                <li class="product_characteristics_item">
+                    <span class="characteristic_key">{{ key }}<div class="pointer"></div></span>
+                    <span class="characteristic_value">{{ value }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock main %}

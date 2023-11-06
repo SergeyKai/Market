@@ -17,6 +17,16 @@ body {
 
     --bacground_categroy_item: #ffffff0e;
     --bacground_categroy_item_hover: #ffffff83;
+
+    --bacground_product_item: #e0d1d173;
+
+    --background_input_color: #a4acb893;
+    
+    
+}
+
+h1,h2,h3,h4 {
+    color: var(--color_font);
 }
 
 .main_site_header {
@@ -49,7 +59,6 @@ body {
     position: relative;
 
     height: 100%;
-    width: 20%;
 }
 
 .logo_title {
@@ -129,4 +138,27 @@ main {
 
     width: 1800px;
     margin: 0 auto;
+}
+
+.main_nav_bar_item_icon {
+    fill: var(--color_font);
+
+    transition: all .25s;
+
+}
+
+.user_check a {
+    margin: 0 5px;
+
+    transition: all .25s;
+
+}
+
+.user_check a:hover {
+    color: var(--color_btn_hover);
+}
+
+.user_check a:hover .main_nav_bar_item_icon {
+    fill: var(--color_btn_hover);
+
 }

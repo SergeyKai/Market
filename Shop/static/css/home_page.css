@@ -1,10 +1,16 @@
 .product_slider {
+    display: flex;
+    align-items: center;
+
     height: 900px;
+
+    overflow: hidden;
 }
 
 .product_item {
     position: relative;
 
+    min-width: 1800px;
     height: 100%;
 
     display: flex;
@@ -20,7 +26,7 @@
     width: 50%;
     height: 100%;
 
-    border-radius: 10px;
+    border-radius: 20px;
 
     overflow: hidden;
 }
@@ -49,7 +55,7 @@
 }
 
 .product_link:hover{
-    color: #4e4e69;
+    color: var(--color_font_hover);
 }
 
 .product_title {
@@ -76,11 +82,9 @@
 
 .btn_add_to_cart {
 
-    padding: 5px 10px;
+    padding: 10px 30px;
     margin-left: 40px;
 
-    width: 140px;
-    height: 40px;
 
     background-color: var(--color_btn);
 
@@ -111,7 +115,7 @@
 }
 
 .categories_wrapper {
-    margin-top: -70px;
+    margin-top: 30px;
 
     display: flex;
     flex-wrap: wrap;

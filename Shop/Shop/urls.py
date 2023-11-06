@@ -23,7 +23,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', include('core.urls')),
-    # path('products/', include('products.urls')),
+    path('products/', include('products.urls')),
+    path('users/', include('users.urls')),
+    path('cart/', include('cart.urls')),
 ]
 
 """
@@ -31,5 +33,4 @@ urlpatterns = [
 меди файлов во время отладки проекта в режиме DEBUG
 """
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

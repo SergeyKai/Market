@@ -20,6 +20,9 @@ class Category(models.Model):
     """
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='category')
+
+    large = models.BooleanField(default=False)
 
     def __str__(self):
         return f'Category: {self.title}; id: {self.pk}'
@@ -32,7 +35,6 @@ class Product(models.Model):
     """
     title = models.CharField(max_length=200)
     supplier = models.ForeignKey(Supplier, on_delete=models.SET_NULL, null=True)
-    prise = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateField(auto_now=True)
     description = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -61,6 +63,7 @@ class ProductVariant(models.Model):
     class: ProductVariant
     Данная модель необхадима для различных вариаций одного продукта
     """
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     color = models.ForeignKey(Color, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
@@ -69,6 +72,12 @@ class ProductVariant(models.Model):
 
     def __str__(self):
         return f'Product: {self.product.title}; Color: {self.color.title}; id: {self.pk}'
+
+    def get_current_price(self):
+        return mark_safe(f'<p class="current_product_price">{self.price}<span>₽</span></p>')
+
+    def get_images(self):
+        return ProductImage.objects.filter(product=self)
 
 
 class ProductImage(models.Model):

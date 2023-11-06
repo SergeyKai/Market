@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/user_form.css' %}">
+{% endblock styles%}
+
+
+{% block main %}
+
+<main>
+
+    <form method="POST" action="" class="user_form">
+        {% csrf_token %}
+        <h2 class="user_form_title">Регистрация</h2>
+        {{ form }}
+        <button type="submit" class="user_submit_btn">Зарегистрироваться</button>
+        <a href="{% url 'login' %}" class="sign_in_link">Перейти на страницу авторизации</a>
+    </form>
+
+
+</main>
+
+{% endblock main %}
+

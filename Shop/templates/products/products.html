@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock styles%}
+
+
+{% block main %}
+
+<main>
+
+    <ul class="product_list">
+        {% for product_info in product_data %}
+        <li class="product_item product_item_normal">
+            <div class="product_image_wrapper">
+                <img src="{{ product_info.image.image.url }}" alt="" class="product_image">
+            </div>
+            <div class="product_info">
+                <p class="product_item_title">
+                    {{ product_info.product.title }}
+                </p>
+                <span class="product_item_price">{{ product_info.product_variant.price }} <span
+                        class="currency">₽</span></span>
+
+            </div>
+            <a href="{% url 'product_instance' product_info.product.pk  %}" class="product_link"></a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</main>
+
+{% endblock main %}
