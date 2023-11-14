@@ -10,7 +10,7 @@
 .product_item {
     position: relative;
 
-    min-width: 1800px;
+    min-width: 79vw;
     height: 100%;
 
     display: flex;
@@ -59,13 +59,13 @@
 }
 
 .product_title {
-    font-size: 50px;
+    font-size: 2vw;
 
     transition: all .25s;
 }
 
 .product_short_description {
-    font-size: 21px;
+    font-size: 1vw;
 }
 
 .price_wrapper {
@@ -93,6 +93,7 @@
 
     color: var(--clor_font_btn);
     font-weight: 600;
+    font-size: 1vw;
 
     cursor: pointer;
 
@@ -225,3 +226,11 @@
 
 }
 
+
+/* .user_form {
+    display: none;
+} */
+
+.current_product_price {
+    font-size: 1.5vw;
+}

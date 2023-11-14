@@ -136,7 +136,7 @@ a:hover~.nav_bot{
 main {
     position: relative;
 
-    width: 1800px;
+    max-width: 80vw;
     margin: 0 auto;
 }
 

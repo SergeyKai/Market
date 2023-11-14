@@ -1,12 +1,15 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% load products_tags %}
+{% load user_tags %}
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/adaptive/home_page.css' %}">
 {% endblock styles%}
 
-
+{{ messages }}
 {% block main %}
 
 <main>
@@ -35,7 +38,13 @@
                 <div class="price_wrapper">
 
                     {{ product.product_variant.get_current_price }}
+
+                    {% if user.is_authenticated %}
                     <a href="{% url 'add_to_cart' product.product.pk %}" class="btn_add_to_cart">В корзину</a>
+                    {% else %}
+                    <button class="show_login_form">В корзину</button>
+                    <button class="show_login_form">В корзину</button>
+                    {% endif %}
 
                 </div>
 
@@ -48,6 +57,7 @@
 
     </div>
     <div class="categories">
+        {% get_categories as categories %}
 
         <div class="categories_wrapper">
             {% for category in categories %}
@@ -81,6 +91,12 @@
         </div>
 
     </div>
+    <form id="login_form" method="POST" action="{% url 'login' %}/next=/" class="user_form" style="display: none">
+        {% csrf_token %}
+        {{ login_form }}
+        <button type="submit" class="user_submit_btn">Войти</button>
+    </form>
 </main>
 
 {% endblock main %}
+

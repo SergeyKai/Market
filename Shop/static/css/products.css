@@ -8,7 +8,9 @@
 
 .product_item {
     position: relative;
-    min-width: 300px;
+
+    margin: 0 20px;
+
     max-width: 350px;
     height: 500px;
 

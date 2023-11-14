@@ -17,7 +17,7 @@ def index(request):
                 'image': product_image,
             }
         )
-    return render(request, 'core/index.html', {'categories': categories, 'products': products_list})
+    return render(request, 'core/index.html', {'products': products_list})
 
 
 def about(request):
